@@ -659,7 +659,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_actor_processing_time_seconds_bucket{class=~\"$class\",path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_actor_processing_time_seconds_bucket{class=~\"$class\",path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{path}}",
@@ -686,8 +686,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": null,
@@ -743,7 +743,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_actor_time_in_mailbox_seconds_bucket{instance=~\"$instance\",class=~\"$class\",path=~\"$path\"}[$interval])) by (le, path)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_actor_time_in_mailbox_seconds_bucket{instance=~\"$instance\",class=~\"$class\",path=~\"$path\"}[$interval])) by (le, path))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{path}}",
@@ -770,8 +770,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -949,8 +949,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1005,7 +1005,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_group_time_in_mailbox_seconds_bucket{instance=~\"$instance\"}[$interval])) by (le, group)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_group_time_in_mailbox_seconds_bucket{instance=~\"$instance\"}[$interval])) by (le, group))",
               "intervalFactor": 2,
               "legendFormat": "{{group}}",
               "refId": "C",
@@ -1031,8 +1031,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1189,7 +1189,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_router_processing_time_seconds_bucket{path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_router_processing_time_seconds_bucket{path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path))",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1217,8 +1217,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1273,7 +1273,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_router_time_in_mailbox_seconds_bucket{instance=~\"$instance\",path=~\"$path\"}[$interval])) by (le, path)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_router_time_in_mailbox_seconds_bucket{instance=~\"$instance\",path=~\"$path\"}[$interval])) by (le, path))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{path}}",
@@ -1300,8 +1300,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1357,7 +1357,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, sum(irate(akka_router_routing_time_seconds_bucket{path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path)) * 1000",
+              "expr": "histogram_quantile($percentile, sum(irate(akka_router_routing_time_seconds_bucket{path=~\"$path\",instance=~\"$instance\"}[$interval])) by (le, path))",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -1385,8 +1385,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1446,7 +1446,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "histogram_quantile($percentile, irate(akka_remote_serialization_time_seconds_bucket{instance=~\"$instance\"}[$interval])) * 1000",
+              "expr": "histogram_quantile($percentile, irate(akka_remote_serialization_time_seconds_bucket{instance=~\"$instance\"}[$interval]))",
               "intervalFactor": 2,
               "legendFormat": "{{instance}} - {{direction}}",
               "refId": "A",
@@ -1471,8 +1471,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "Milliseconds",
+              "format": "s",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
@@ -1545,8 +1545,8 @@
           },
           "yaxes": [
             {
-              "format": "short",
-              "label": "bytes",
+              "format": "decbytes",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": "0",
